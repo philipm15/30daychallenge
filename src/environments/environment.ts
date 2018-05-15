@@ -4,5 +4,16 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
-};
+  production: false,
+  config: {
+      apiKey: "AIzaSyDhoKWhkVsr_7JhCa2BNUZzTzIyd39XDvc",
+      authDomain: "angular-30-day-challenge.firebaseapp.com",
+      databaseURL: "https://angular-30-day-challenge.firebaseio.com",
+      projectId: "angular-30-day-challenge",
+      storageBucket: "angular-30-day-challenge.appspot.com",
+      messagingSenderId: "863196373351"
+  }
+}
+
+
+
