@@ -1,4 +1,21 @@
-<p>
-  login works!
-  <button (click)="googleLogin()">Login with Google</button>
-</p>
+<div class="wrapper">
+  <mat-card class="login-window">
+    <mat-card-header>
+      <mat-card-title class="header">Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="full-width">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Email" required/>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input matInput type="password" placeholder="Password" required/>
+        </mat-form-field>
+        <button mat-raised-button (click)="login()" class="login-btn">Login</button>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="googleLogin()" class="google-btn"><i class="fa fa-google" aria-hidden="true"></i></button>
+    </mat-card-actions>
+  </mat-card>
+</div>

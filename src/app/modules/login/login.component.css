@@ -1,0 +1,51 @@
+.wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #EFEFEF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-window {
+    width: 450px;
+    height: 325px;
+    background-color: whitesmoke;
+}
+
+mat-card-header {
+    height: 15%;
+}
+
+mat-card-content{
+    height: 65%;
+}
+
+mat-card-actions {
+    border-top: 1px solid lightgrey;
+    height: 15%;
+    margin: 0px;
+}
+
+.header {
+    color: #ff3b3f;
+    font-size: 1.20em;
+}
+
+.fa-google {
+    color: white;
+}
+
+.login-btn{
+    background-color: #ff3b3f;
+    color: white;
+}
+
+.google-btn {
+    background-color: #dd4b39;
+}
+
+.full-width  {
+    width: 100%;
+}

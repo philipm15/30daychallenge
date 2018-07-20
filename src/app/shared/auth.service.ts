@@ -8,9 +8,10 @@ import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firesto
 import { CustomUser } from '../models/user';
 import { Challenge } from '../models/challenge';
 import { ChallengeDay } from '../models/challenge_day';
+import { Router } from '@angular/router';
 
 //User Interface
-class User {
+interface User {
   uid: string;
   email: string;
   photoURL?: string;
@@ -25,13 +26,14 @@ export class AuthService{
   user: Observable<User>;
 
   constructor(
-    public afAuth: AngularFireAuth,
-    private afs: AngularFirestore
+    private afAuth: AngularFireAuth,
+    private afs: AngularFirestore,
+    private router: Router
   ) { 
     this.user = this.afAuth.authState
       .switchMap(user => {
         if(user) {
-          return this.afs.doc<User>(`user/$user.uid`).valueChanges()
+          return this.afs.doc<User>(`user/${user.uid}`).valueChanges()
         } else {
           Observable.of(null)
         }
@@ -62,7 +64,9 @@ export class AuthService{
   }
 
   signOut(){
-    this.afAuth.auth.signOut();
+      this.afAuth.auth.signOut().then(() => {
+        this.router.navigate(['/login']);
+    });
   }
 
   private updateUserData(user: User){

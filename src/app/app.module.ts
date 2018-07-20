@@ -12,6 +12,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 //Angular Material
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 //environment
 import { environment } from '../environments/environment';
@@ -27,6 +28,7 @@ import { LayoutModule } from './modules/layout/layout.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MaterialModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.config),
     AngularFirestoreModule.enablePersistence(),
