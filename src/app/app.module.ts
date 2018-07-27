@@ -20,6 +20,8 @@ import { AuthService } from './shared/auth.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { LoginModule } from './modules/login/login.module';
 import { LayoutModule } from './modules/layout/layout.module';
+import { AuthGuard } from './shared/auth.guard';
+import { ChallengeService } from './shared/challenge.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,7 @@ import { LayoutModule } from './modules/layout/layout.module';
     AppRoutingModule,
     
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard, ChallengeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

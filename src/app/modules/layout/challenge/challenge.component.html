@@ -1,0 +1,23 @@
+<div class="flex-container">
+    <mat-card class="child filter">
+        <div class="create">
+            <button mat-raised-button color="accent">Create a new Challenge!</button>
+            <mat-divider></mat-divider>
+        </div>
+    </mat-card>
+    <div class="child challenges-table">
+        <mat-accordion>
+            <mat-expansion-panel *ngFor="let c of challenges | async">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Challenge: {{ c.name }}</mat-panel-title>
+                        <mat-panel-description>Description: {{ c.beschreibung | slice:0:41 }}</mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>Description:</p>{{ c.beschreibung }}
+                    <p>Tags:</p> {{ c.tags }}
+                    <mat-action-row>
+                        <button mat-raised-button color="primary">Start Challenge!</button>
+                    </mat-action-row>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</div>
