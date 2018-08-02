@@ -1,7 +1,7 @@
 <div class="flex-container">
     <mat-card class="child filter">
         <div class="create">
-            <button mat-raised-button color="accent">Create a new Challenge!</button>
+            <button (click)="newChallenge()" mat-raised-button color="accent">Create a new Challenge!</button>
             <mat-divider></mat-divider>
         </div>
     </mat-card>
@@ -15,7 +15,7 @@
                     <p>Description:</p>{{ c.beschreibung }}
                     <p>Tags:</p> {{ c.tags }}
                     <mat-action-row>
-                        <button mat-raised-button color="primary">Start Challenge!</button>
+                        <button mat-raised-button color="primary" (click)="startChallenge()" >Start Challenge!</button>
                     </mat-action-row>
             </mat-expansion-panel>
         </mat-accordion>

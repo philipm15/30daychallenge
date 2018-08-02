@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
@@ -11,8 +13,10 @@ import { NewChallengeComponent } from './challenge/newChallenge/newChallenge.com
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     LayoutRoutingModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
   ],
   declarations: [
     LayoutComponent, 

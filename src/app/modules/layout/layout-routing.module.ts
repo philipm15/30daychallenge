@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ChallengeComponent } from './challenge/challenge.component';
+import { NewChallengeComponent } from './challenge/newChallenge/newChallenge.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'user',
         component: UserProfileComponent
+      },
+      {
+        path: 'newchallenge',
+        component: NewChallengeComponent
       }
     ]
   }

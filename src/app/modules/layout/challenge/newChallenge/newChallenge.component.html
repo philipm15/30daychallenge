@@ -1,4 +1,36 @@
-<h2 mat-dialog-title>Test</h2>
-<mat-dialog-actions>
-    <button mat-raised-button mat-dialog-close>Close</button>
-</mat-dialog-actions>
+<div class="flex-container">
+    <mat-card class="card">
+        <mat-card-header>
+            <button mat-raised-button color="primary">Go Back</button>
+            <button mat-raised-button color="primary">Reset</button>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <mat-form-field>
+                <input matInput [(ngModel)]="name" placeholder="Challenge Name" required>
+            </mat-form-field>
+            <mat-form-field>
+                <textarea [(ngModel)]="description" class="description" rows="10" matInput placeholder="Description" required></textarea>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-chip-list #tagList>
+                        <mat-chip *ngFor="let t of tags" [selectable]="selectable"
+                        [removable]="removable" (removed)="remove(t)">
+                        {{ t }}
+                        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                    </mat-chip>
+                    <input placeholder="Add Tags"
+                        [matChipInputFor]="tagList"
+                        [matChipInputSeparatorKeyCodes]="separatorKeyCodes"
+                        [matChipInputAddOnBlur]="addOnBlur"
+                        (matChipInputTokenEnd)="add($event)"
+                        >
+                </mat-chip-list>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-actions>
+            <button mat-raised-button color="accent" (click)="createChallenge()">Create Challenge</button>
+        </mat-card-actions>
+    </mat-card> 
+</div>

@@ -1,0 +1,35 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0 5 5 5;
+}
+
+.child {
+    margin: 5px;
+}
+
+.card {
+    width: 800px;
+    padding: 12px;
+}
+
+mat-card-header {
+    margin-bottom: 12px;
+}
+
+mat-card-content  {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: wrap;
+}
+
+mat-card-header > button {
+    margin-right: 8px;
+}
+
+mat-card-actions {
+    padding: 20px;
+    margin-bottom: 0px !important;
+}

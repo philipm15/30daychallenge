@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Challenge } from '../../../models/challenge';
 import { NewChallengeComponent } from './newChallenge/newChallenge.component';
 import { ViewChild } from '@angular/core/src/metadata/di';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-challenge',
@@ -11,10 +12,10 @@ import { ViewChild } from '@angular/core/src/metadata/di';
     styleUrls: ['./challenge.component.css']
 })
 export class ChallengeComponent implements OnInit {
-    //@ViewChild
 
     constructor(
-        private afs: AngularFirestore
+        private afs: AngularFirestore,
+        private router: Router
     ){}
 
     private challengeCollection: AngularFirestoreCollection<Challenge>;
@@ -26,6 +27,6 @@ export class ChallengeComponent implements OnInit {
     }
 
     newChallenge(){
-
+        this.router.navigateByUrl('/newchallenge');
     }
 }
